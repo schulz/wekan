@@ -98,8 +98,13 @@ Meteor.startup(() => {
             privateKeyFile: process.env.SAML_PRIVATE_KEYFILE,
             publicCertFile: process.env.SAML_PUBLIC_CERTFILE,
             identifierFormat: process.env.SAML_IDENTIFIER_FORMAT,
-            localProfileMatchAttribute: process.env.SAML_LOCAL_PROFILE_MATCH_ATTRIBUTE,
-            attributesSAML: process.env.SAML_ATTRIBUTES || [sn, givenName, mail],
+            localProfileMatchAttribute:
+              process.env.SAML_LOCAL_PROFILE_MATCH_ATTRIBUTE,
+            attributesSAML: process.env.SAML_ATTRIBUTES || [
+              sn,
+              givenName,
+              mail,
+            ],
 
             /*
             settings = {"saml":[{

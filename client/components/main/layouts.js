@@ -149,11 +149,14 @@ async function authentication(event, templateInstance) {
       return new Promise(resolve => {
         //var provider = event.target.getAttribute('data-provider');
         var provider = 'openam';
-        Meteor.loginWithSaml({
-          provider
-        }, function() {
-          resolve(FlowRouter.go('/'));
-        });
+        Meteor.loginWithSaml(
+          {
+            provider,
+          },
+          function() {
+            resolve(FlowRouter.go('/'));
+          },
+        );
       });
 
     case 'cas':
