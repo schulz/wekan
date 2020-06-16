@@ -145,6 +145,17 @@ async function authentication(event, templateInstance) {
         });
       });
 
+    case 'saml':
+      return new Promise(resolve => {
+        //var provider = event.target.getAttribute('data-provider');
+        var provider = 'openam';
+        Meteor.loginWithSaml({
+          provider
+        }, function() {
+          resolve(FlowRouter.go('/'));
+        });
+      });
+
     case 'cas':
       return new Promise(resolve => {
         Meteor.loginWithCas(match, password, function() {

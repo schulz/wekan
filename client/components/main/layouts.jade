@@ -24,6 +24,7 @@ template(name="userFormsLayout")
         +loader
       else
         +Template.dynamic(template=content)
+        +connectionMethod(authenticationMethod='saml')
         if currentSetting.displayAuthenticationMethod
           +connectionMethod(authenticationMethod=currentSetting.defaultAuthenticationMethod)
         div.at-form-lang
